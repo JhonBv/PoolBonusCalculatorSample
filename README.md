@@ -1,4 +1,4 @@
-# Synetec Bonus Calculator API
+# BonusPool Calculator Light
 
 ## About
 The aim fo this excercise is to build a Bonus calculator that will return the amount of bonus to be allocated to employees.
@@ -13,18 +13,19 @@ DDD Approach is used to separate Domain knowledge from Application logic.
 
 ## DRY (Don not Repeat Yourself) Principles
 
-UnityOfWork Pattern: No extra layer of UnityofWork has been added since the project already uses the Microsoft DbContext which acts as the Singleton (hence UnitOfWork) pattern between the Database and the Application.
-Repository Pattern: No extra layer for generic repository have been added since the application uses the Microsot Entity Framework Core which implements the Repository pattern.
+* UnityOfWork Pattern: No extra layer of UnityofWork has been added since the project already uses the Microsoft DbContext which acts as the Singleton (hence UnitOfWork) pattern between the Database and the Application.
+* Repository Pattern: No extra layer for generic repository have been added since the application uses the Microsot Entity Framework Core which implements the Repository pattern.
 
 ## Architecture
 
-The application closely follows the SOLID principles. A Service layer has been created in order to make the bridge between that Data Layer (DAL) and the Domain Layer.
+* The application closely follows the SOLID principles. A Service layer has been created in order to make the bridge between that Data Layer (DAL) and the Domain Layer.
 Services are Injectd at run-time via .Net Core Dependency Injection.
 
-DTOs that existed at the presentation layer have been moved to the Service Layer in order to further separate concerns.
+* DTOs that existed at the presentation layer have been moved to the Service Layer in order to further separate concerns.
 
-Bonus calculations are performed at the Domain layer (CalculateBonus domain model) and accessible via the Service layer from the BonusPoolService service.
+* Bonus calculations are performed at the Domain layer (CalculateBonus domain model) and accessible via the Service layer from the BonusPoolService service.
 
+* Single Responsibility at Domain Layer. The CalculateBonus Domain model encapsulates the logic for the Bonus calculation. It is a good example of Single Responsibility.
 ## Typical responses
 
 Responsed are returned in Json format. Response Models have create in order to make sure that Responses are consistent. Typical response status codes are also returned to assist developers with integration tasks.
@@ -40,8 +41,8 @@ Controller Tests which test the controller's expected behaviour when the corresp
 Calculator tests which are run against the Bonus calculator.
 
 ## Running the Applicaiton
-Simply run the SynetecAssessmentApi from Visual Studio. A browser will open and the following UI will be displayed:
-![Home page of Synetec API Swagger](Readme/Synetecapiswagger.png)
+Simply run the project from Visual Studio. A browser will open and the following UI will be displayed:
+![Home page of Swagger API](Readme/Synetecapiswagger.png)
 
 
 ## Postman support
@@ -66,7 +67,7 @@ The image below demonstrates a postman test
 
 ## Libraries
 
-In addition to the standard Microsoft Net core libraries, The Synetec Service uses the following libraries which are core to the architecture and functionality
+In addition to the standard Microsoft Net core libraries, The Test project uses the following libraries which are core to the architecture and functionality
 
 * xunit 2.4.1
 * Moq 4.16.1
