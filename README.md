@@ -28,21 +28,21 @@ Services are Injectd at run-time via .Net Core Dependency Injection.
 * Single Responsibility at Domain Layer. The CalculateBonus Domain model encapsulates the logic for the Bonus calculation. It is a good example of Single Responsibility.
 ## Typical responses
 
-Responsed are returned in Json format. Response Models have create in order to make sure that Responses are consistent. Typical response status codes are also returned to assist developers with integration tasks.
+Responses are returned in Json format. Response Models have been created in order to keep consistency. Typical response status codes are also returned to assist developers with integration tasks.
 
 ## Unit Testing
 
 Unit tests have been written to facilitate testing the application logic. 
 xunit and Moq libraries were used in order to Mock the services at the service layer and to facilitate writing the test.
 
-There are two types of tests:
+There are two set of tests:
 
-Controller Tests which test the controller's expected behaviour when the corresponding Service is injected.
-Calculator tests which are run against the Bonus calculator.
+* Controller Tests which test the controller's expected behaviour when the corresponding Service is injected.
+* Calculator tests which are run against the Bonus calculator.
 
 ## Running the Applicaiton
 Simply run the project from Visual Studio. A browser will open and the following UI will be displayed:
-![Home page of Swagger API](Readme/Synetecapiswagger.png)
+![Home page of Swagger API](Readme/apiswagger.png)
 
 
 ## Postman support
@@ -62,7 +62,7 @@ Lastly, pass the following JSon content (raw body):
 }
 ```
 The image below demonstrates a postman test
-![Postman test](Readme/Synetecapipostman.png)
+![Postman test](Readme/apipostman.png)
 
 
 ## Libraries
