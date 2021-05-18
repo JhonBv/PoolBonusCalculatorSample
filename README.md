@@ -6,14 +6,16 @@ The aim fo this excercise is to build a Bonus calculator that will return the am
 
 ## Version history
 The current API version is v.1 (Dev)
-## Key Features
+## Key Aspects
 
-TDD Approach has been taken to ensure that the calculations retunr the correct amount.
-DDD Approach is used to separate Domain knowledge from Application logic.
+* TDD Approach has been taken to ensure that the calculations return the correct amount.
+* DDD Approach is used to separate Domain knowledge from Application logic.(S in the SOLID Principles)
+* Domain Models use the Privet Set setter. (Open/Closed principle)
+* Interfaces are injected and used as contracts to access Services at the Service Layer. (I in Solid).
 
 ## DRY (Don not Repeat Yourself) Principles
 
-* UnityOfWork Pattern: No extra layer of UnityofWork has been added since the project already uses the Microsoft DbContext which acts as the Singleton (hence UnitOfWork) pattern between the Database and the Application.
+* UnityOfWork Pattern: No extra layer of UnityofWork has been added since the project already uses the Microsoft DbContext which acts as the Singleton (hence UnitOfWork) pattern between the Database and the Application (aka Single Responsibility).
 * Repository Pattern: No extra layer for generic repository have been added since the application uses the Microsot Entity Framework Core which implements the Repository pattern.
 
 ## Architecture
